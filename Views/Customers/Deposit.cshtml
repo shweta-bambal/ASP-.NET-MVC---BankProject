@@ -1,0 +1,23 @@
+﻿@model BankProject.Models.Customer
+@{
+    ViewBag.Title = "DepositPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deposit</h2>
+
+@using (Html.BeginForm("Deposit", "Customers", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label for="amount">Enter Amount</label>
+        @Html.TextBoxFor(m => m.Balance)
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Name)
+    @Html.HiddenFor(m => m.Email)
+    <button type="submit" class="btn btn-light">Deposit</button>
+}
+

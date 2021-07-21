@@ -1,0 +1,28 @@
+﻿@model BankProject.ViewModels.CreateTransactionViewModel
+
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+
+<h2>Home</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.AllTransactions.TransactionId)
+    @Html.DropDownListFor(m => m.AllTransactions.TransactionId, new SelectList(Model.Transactions, "Id", "Name"), "Select Transaction", new { @class = "form-control" })
+</div>
+    
+    <button type="submit" class="btn btn-light">Continue</button>
+
+    <br />
+    <br />
+    <a class="btn btn-primary form-group" href="~/Customers/CheckBalance" type="button">Check Balance</a>
+    
+
+}
+
+

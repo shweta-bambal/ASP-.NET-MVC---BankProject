@@ -1,0 +1,30 @@
+﻿@model IEnumerable<BankProject.Models.AllTransactions>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="~/Customers/SearchByDate" type="button" class="btn btn-light">Search By Date</a>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Transaction</th>
+            <th>Transaction Date</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td>@v.Customers.Name</td>
+                <td>@v.Transactions.Name</td>
+                <td>@v.TransactionDate.Value.ToString("dd-MM-yyyy")</td>
+                <td>@v.Customers.Balance</td>
+            </tr>
+        }
+    </tbody>
+</table>

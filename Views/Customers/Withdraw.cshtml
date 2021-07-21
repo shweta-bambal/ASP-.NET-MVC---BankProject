@@ -1,0 +1,21 @@
+﻿@model BankProject.Models.Customer
+@{
+    ViewBag.Title = "Withdraw";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Withdraw</h2>
+
+@using (Html.BeginForm("WithDraw", "Customers", FormMethod.Post))
+{
+    <div class="form-group">
+        <p>@ViewBag.Message</p>
+        <label for="amount">Enter Amount</label>
+        @Html.TextBoxFor(m => m.Balance)
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    
+
+    <button type="submit" class="btn btn-light">Withdraw</button>
+}

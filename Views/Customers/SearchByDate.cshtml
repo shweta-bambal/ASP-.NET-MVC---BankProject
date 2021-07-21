@@ -1,0 +1,23 @@
+﻿@model BankProject.Models.FilterTransaction
+@{
+    ViewBag.Title = "SearchByDate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchByDate</h2>
+
+@using (Html.BeginForm())
+{
+    <br /><br />
+          <div class="form-group">
+              @Html.LabelFor(m => m.FromDate)
+              @Html.TextBoxFor(m => m.FromDate, "{0: dd-MM-yyyy}")
+
+              @Html.LabelFor(m => m.ToDate)
+              @Html.TextBoxFor(m => m.ToDate, "{0: dd-MM-yyyy}")
+          </div>
+
+  <br /><button type="submit" class="btn btn-primary">Apply</button>
+
+
+}
